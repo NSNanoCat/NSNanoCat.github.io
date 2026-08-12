@@ -5,3 +5,4 @@ doc_build/
 *.tsbuildinfo
 .pnpm-store/
 docs/api/url/**/*.md
+docs/api/util/**/*.md

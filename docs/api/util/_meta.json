@@ -1,0 +1,27 @@
+[
+  {
+    "type": "dir",
+    "label": "Classes",
+    "name": "classes"
+  },
+  {
+    "type": "dir",
+    "label": "Functions",
+    "name": "functions"
+  },
+  {
+    "type": "dir",
+    "label": "Interfaces",
+    "name": "interfaces"
+  },
+  {
+    "type": "dir",
+    "label": "Type Aliases",
+    "name": "type-aliases"
+  },
+  {
+    "type": "dir",
+    "label": "Variables",
+    "name": "variables"
+  }
+]

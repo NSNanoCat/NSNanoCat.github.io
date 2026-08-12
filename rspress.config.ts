@@ -48,6 +48,23 @@ export default defineConfig({
     pluginSitemap({
       siteUrl,
     }),
+    {
+      ...pluginTypeDoc({
+        entryPoints: [utilEntry],
+        outDir: "api/util",
+        setup(app) {
+          const compilerOptions = app.options.getCompilerOptions(app.logger);
+          app.options.setCompilerOptions(
+            [utilEntry],
+            { ...compilerOptions, allowJs: true, checkJs: false, strict: false },
+            undefined,
+          );
+          app.options.setValue("name", "@nsnanocat/util");
+          app.options.setValue("router", "member");
+        },
+      }),
+      name: "@rspress/plugin-typedoc-util",
+    },
     pluginTypeDoc({
       entryPoints: urlEntries,
       outDir: "api/url",
