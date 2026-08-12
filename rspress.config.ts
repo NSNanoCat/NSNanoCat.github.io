@@ -1,8 +1,8 @@
 import path from "node:path";
 import { defineConfig } from "@rspress/core";
-import pluginSitemap from "rspress-plugin-sitemap";
+import { pluginSitemap } from "@rspress/plugin-sitemap";
 
-const siteUrl = "https://NSNanoCat.github.io";
+const siteUrl = "https://nsnanocat.github.io";
 
 export default defineConfig({
   root: path.join(__dirname, "docs"),
@@ -24,7 +24,7 @@ export default defineConfig({
   },
   plugins: [
     pluginSitemap({
-      domain: siteUrl,
+      siteUrl,
     }),
   ],
 });

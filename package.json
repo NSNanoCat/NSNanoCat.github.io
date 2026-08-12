@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@nsnanocat/doc-ui": "^2.4.7",
-    "@rspress/core": "^2.0.18",
-    "rspress-plugin-sitemap": "^1.2.1"
+    "@rspress/core": "^2.0.18"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.6",
+    "@rspress/plugin-sitemap": "2.0.19",
     "@types/node": "^20.0.0",
     "@types/react": "^18.3.11",
     "typescript": "^5.9.3"

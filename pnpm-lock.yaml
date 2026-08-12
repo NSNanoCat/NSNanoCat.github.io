@@ -14,13 +14,13 @@ importers:
       '@rspress/core':
         specifier: ^2.0.18
         version: 2.0.19(@rspack/core@2.1.9(@swc/helpers@0.5.23))(micromark-util-types@2.0.2)(micromark@4.0.2)
-      rspress-plugin-sitemap:
-        specifier: ^1.2.1
-        version: 1.2.1
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.4.6
         version: 2.5.8
+      '@rspress/plugin-sitemap':
+        specifier: 2.0.19
+        version: 2.0.19(@rspress/core@2.0.19(@rspack/core@2.1.9(@swc/helpers@0.5.23))(micromark-util-types@2.0.2)(micromark@4.0.2))
       '@types/node':
         specifier: ^20.0.0
         version: 20.19.43
@@ -257,6 +257,12 @@ packages:
     resolution: {integrity: sha512-m0KfQNNXxjP975652nIOwUTqrvbJapRp4NpnoQMc5heawGhkC4+F7zTHvxY+huvzGYnKtL2fMMTrgWhEjKkrug==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
+
+  '@rspress/plugin-sitemap@2.0.19':
+    resolution: {integrity: sha512-9ydrpj9hmmXWKWKIXUqJ1UrfxSvfxhHZRBZLb5OkTlOuQBNAg6BpsrW1WHoJqJr7p+3zqlz7S/9HTzSA3+EYcA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@rspress/core': ^2.0.10
 
   '@rspress/shared@2.0.19':
     resolution: {integrity: sha512-INrETllWuR49lksqCz+xeLSO6rKtHA+5Ix2YQWcP9nerCuTSyGYwH8eBC0HrIacJkGHxB8wkkbV99tyzGtY8Wg==}
@@ -914,9 +920,6 @@ packages:
   resize-observer-polyfill@1.5.1:
     resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
 
-  rspress-plugin-sitemap@1.2.1:
-    resolution: {integrity: sha512-JMf2/SKerX3oiFuNaRAnPJxOtBl5hOF0qupK63Fh9CaTb6Mn440iximV+1V0fd/XeOhHlN0oLJPFUDrrkgkcwg==}
-
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
@@ -1276,6 +1279,10 @@ snapshots:
       - micromark
       - micromark-util-types
       - supports-color
+
+  '@rspress/plugin-sitemap@2.0.19(@rspress/core@2.0.19(@rspack/core@2.1.9(@swc/helpers@0.5.23))(micromark-util-types@2.0.2)(micromark@4.0.2))':
+    dependencies:
+      '@rspress/core': 2.0.19(@rspack/core@2.1.9(@swc/helpers@0.5.23))(micromark-util-types@2.0.2)(micromark@4.0.2)
 
   '@rspress/shared@2.0.19':
     dependencies:
@@ -2361,8 +2368,6 @@ snapshots:
       unified: 11.0.5
 
   resize-observer-polyfill@1.5.1: {}
-
-  rspress-plugin-sitemap@1.2.1: {}
 
   scheduler@0.27.0: {}
 
