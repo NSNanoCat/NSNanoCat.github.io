@@ -3,7 +3,7 @@ pageType: home
 
 hero:
   icon: 🐈
-  name: NSNanoCat
+  name: NanoCat Co., Ltd.
   text: JavaScript 基础组件
   tagline: 面向 JavaScriptCore、Node.js 与常用 iOS 网络工具
   actions:
