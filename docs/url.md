@@ -9,6 +9,7 @@ description: 面向 iOS JavaScriptCore 的 URL 与 URLSearchParams Polyfill
 API 的脚本运行环境。
 
 - [GitHub 仓库](https://github.com/NSNanoCat/URL)
+- [npm](https://www.npmjs.com/package/@nsnanocat/url)
 - [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/url)
 
 ## 安装

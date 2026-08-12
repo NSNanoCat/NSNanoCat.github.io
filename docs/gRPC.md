@@ -8,6 +8,7 @@ description: 面向常用 iOS 网络工具的 gRPC 编解码辅助库
 `@nsnanocat/grpc` 提供纯 JavaScript gRPC 帧编解码能力，并复用 `@nsnanocat/util` 适配常用 iOS 网络工具。
 
 - [GitHub 仓库](https://github.com/NSNanoCat/gRPC)
+- [npm](https://www.npmjs.com/package/@nsnanocat/grpc)
 - [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/grpc)
 - [API 说明](https://github.com/NSNanoCat/gRPC#readme)
 

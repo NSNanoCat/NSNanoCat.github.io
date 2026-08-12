@@ -9,6 +9,7 @@ description: 跨平台脚本接口与 Polyfill 工具库
 的常用脚本接口，尽量减少业务脚本中的平台判断。
 
 - [GitHub 仓库](https://github.com/NSNanoCat/util)
+- [npm](https://www.npmjs.com/package/@nsnanocat/util)
 - [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/util)
 - [完整 API 参考](https://github.com/NSNanoCat/util#readme)
 
