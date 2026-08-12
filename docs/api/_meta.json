@@ -8,5 +8,10 @@
     "type": "dir",
     "name": "url",
     "label": "@nsnanocat/url"
+  },
+  {
+    "type": "dir",
+    "name": "grpc",
+    "label": "@nsnanocat/grpc"
   }
 ]

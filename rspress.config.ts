@@ -74,5 +74,31 @@ export default defineConfig({
         app.options.setValue("name", "@nsnanocat/url");
       },
     }),
+    {
+      ...pluginTypeDoc({
+        entryPoints: [grpcEntry],
+        outDir: "api/grpc",
+        setup(app) {
+          const compilerOptions = app.options.getCompilerOptions(app.logger);
+          app.options.setCompilerOptions(
+            [grpcEntry],
+            { ...compilerOptions, allowJs: true, checkJs: false, strict: false },
+            undefined,
+          );
+          app.options.setValue("name", "@nsnanocat/grpc");
+          app.options.setValue("router", "member");
+          app.converter.on("resolveEnd", (context) => {
+            const defaultExport = context.project.children?.find((reflection) => reflection.name === "default");
+            if (defaultExport) {
+              defaultExport.name = "gRPC";
+              for (const child of defaultExport.children ?? [])
+                for (const signature of child.signatures ?? [])
+                  if (signature.name === "default") signature.name = "gRPC";
+            }
+          });
+        },
+      }),
+      name: "@rspress/plugin-typedoc-grpc",
+    },
   ],
 });

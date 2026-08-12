@@ -6,3 +6,4 @@ doc_build/
 .pnpm-store/
 docs/api/url/**/*.md
 docs/api/util/**/*.md
+docs/api/grpc/**/*.md
