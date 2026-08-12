@@ -1,17 +1,5 @@
 [
   {
-    "text": "util",
-    "link": "/util"
-  },
-  {
-    "text": "url",
-    "link": "/url"
-  },
-  {
-    "text": "gRPC",
-    "link": "/gRPC"
-  },
-  {
     "text": "GitHub Packages",
     "link": "https://github.com/orgs/NSNanoCat/packages"
   }
