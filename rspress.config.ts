@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig } from "@rspress/core";
-import { pluginApiDocgen } from "@rspress/plugin-api-docgen";
 import { pluginSitemap } from "@rspress/plugin-sitemap";
 import { pluginTypeDoc } from "@rspress/plugin-typedoc";
 
@@ -37,14 +36,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    pluginApiDocgen({
-      entries: {
-        // documentation 模式保留 entry key，API 组件会追加当前默认语言。
-        "util-en": utilEntry,
-        "grpc-en": grpcEntry,
-      },
-      apiParseTool: "documentation",
-    }),
     pluginSitemap({
       siteUrl,
     }),

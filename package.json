@@ -14,7 +14,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.6",
-    "@rspress/plugin-api-docgen": "2.0.19",
     "@rspress/plugin-sitemap": "2.0.19",
     "@rspress/plugin-typedoc": "2.0.19",
     "@types/node": "^20.0.0",
