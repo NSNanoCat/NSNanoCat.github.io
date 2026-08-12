@@ -10,10 +10,13 @@ const utilRoot = process.env.NSNANOCAT_UTIL_ROOT ?? path.resolve(__dirname, "../
 const utilEntry = ["index.mjs", "index.js"].map((file) => path.join(utilRoot, file)).find(fs.existsSync);
 const urlRoot = process.env.NSNANOCAT_URL_ROOT ?? path.resolve(__dirname, "../URL");
 const urlEntries = ["URL.mts", "URLSearchParams.mts"].map((file) => path.join(urlRoot, file));
+const grpcRoot = process.env.NSNANOCAT_GRPC_ROOT ?? path.resolve(__dirname, "../gRPC");
+const grpcEntry = ["index.mjs", "index.js"].map((file) => path.join(grpcRoot, file)).find(fs.existsSync);
 
 if (!utilEntry) throw new Error(`找不到 @nsnanocat/util 入口：${utilRoot}`);
 if (urlEntries.some((entry) => !fs.existsSync(entry)))
   throw new Error(`找不到 @nsnanocat/url TypeScript 入口：${urlRoot}`);
+if (!grpcEntry) throw new Error(`找不到 @nsnanocat/grpc 入口：${grpcRoot}`);
 
 export default defineConfig({
   root: path.join(__dirname, "docs"),
@@ -38,6 +41,7 @@ export default defineConfig({
       entries: {
         // documentation 模式保留 entry key，API 组件会追加当前默认语言。
         "util-en": utilEntry,
+        "grpc-en": grpcEntry,
       },
       apiParseTool: "documentation",
     }),
