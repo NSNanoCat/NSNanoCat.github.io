@@ -1,0 +1,6 @@
+.DS_Store
+node_modules/
+doc_build/
+*.log*
+*.tsbuildinfo
+.pnpm-store/

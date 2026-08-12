@@ -1,0 +1,62 @@
+---
+title: url
+description: 面向 iOS JavaScriptCore 的 URL 与 URLSearchParams Polyfill
+---
+
+# @nsnanocat/url
+
+`@nsnanocat/url` 为至少 iOS 15 JavaScriptCore 提供 `URL` 与 `URLSearchParams` 实现，适用于缺少完整 Web URL
+API 的脚本运行环境。
+
+- [GitHub 仓库](https://github.com/NSNanoCat/URL)
+- [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/url)
+
+## 安装
+
+```shell
+pnpm add @nsnanocat/url
+```
+
+如果从 GitHub Packages 安装：
+
+```ini title=".npmrc"
+@nsnanocat:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+## 快速开始
+
+```js
+import { URL } from "@nsnanocat/url";
+
+const url = new URL("https://example.com/search?q=JavaScriptCore");
+
+url.searchParams.set("page", "2");
+url.hash = "result";
+
+console.log(url.href);
+// https://example.com/search?q=JavaScriptCore&page=2#result
+```
+
+也可以单独使用 `URLSearchParams`：
+
+```js
+import { URLSearchParams } from "@nsnanocat/url/URLSearchParams.mjs";
+
+const params = new URLSearchParams("q=JavaScriptCore");
+params.append("page", "2");
+
+console.log(params.toString());
+// q=JavaScriptCore&page=2
+```
+
+## 提供的文件
+
+| 文件 | 内容 |
+| --- | --- |
+| `URL.mjs` | `URL` 类，内部使用 `URLSearchParams` 完成查询参数操作 |
+| `URLSearchParams.mjs` | 可单独导入的 `URLSearchParams` 类 |
+
+:::note
+这是面向目标脚本环境的 Polyfill，不以覆盖浏览器中 URL 标准的全部边界行为为目标。升级前建议在实际宿主中验证依赖的解析与序列化场景。
+:::

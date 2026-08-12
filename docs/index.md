@@ -1,0 +1,35 @@
+---
+pageType: home
+
+hero:
+  icon: 🐈
+  name: NSNanoCat
+  text: JavaScript 基础组件
+  tagline: 面向 JavaScriptCore、Node.js 与常用 iOS 网络工具
+  actions:
+    - theme: brand
+      text: 查看 util
+      link: /util
+    - theme: alt
+      text: GitHub Packages
+      link: https://github.com/orgs/NSNanoCat/packages
+
+features:
+  - icon: 🧰
+    title: util
+    details: 统一 HTTP、通知、持久化、脚本结束与常用 Polyfill，减少不同脚本平台之间的条件分支。
+    span: 4
+    link: /util
+
+  - icon: 🔗
+    title: url
+    details: 为至少 iOS 15 JavaScriptCore 提供 URL 与 URLSearchParams Polyfill。
+    span: 4
+    link: /url
+
+  - icon: 📦
+    title: gRPC
+    details: 在常用 iOS 网络工具中解码和编码 gRPC 帧，并支持二进制 gRPC-Web unary 响应。
+    span: 4
+    link: /gRPC
+---

@@ -1,0 +1,78 @@
+---
+title: util
+description: 跨平台脚本接口与 Polyfill 工具库
+---
+
+# @nsnanocat/util
+
+`@nsnanocat/util` 用于统一 Quantumult X、Loon、Shadowrocket、Egern、Surge、Stash、Worker 与 Node.js
+的常用脚本接口，尽量减少业务脚本中的平台判断。
+
+- [GitHub 仓库](https://github.com/NSNanoCat/util)
+- [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/util)
+- [完整 API 参考](https://github.com/NSNanoCat/util#readme)
+
+## 安装
+
+从 npm 安装：
+
+```shell
+pnpm add @nsnanocat/util
+```
+
+从 GitHub Packages 安装时，先配置作用域和具有 `read:packages` 权限的 Token：
+
+```ini title=".npmrc"
+@nsnanocat:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+然后执行：
+
+```shell
+pnpm add @nsnanocat/util
+```
+
+## 快速开始
+
+```js
+import {
+  $app,
+  $argument,
+  Console,
+  Lodash as _,
+  Storage,
+  done,
+  fetch,
+  notification,
+  qs,
+  time,
+  wait,
+} from "@nsnanocat/util";
+
+Console.log(`当前平台：${$app}`);
+
+const settings = qs.parse("enabled=true&region=US");
+await Storage.setItem("example.settings", settings);
+
+const response = await fetch("https://example.com/data.json");
+notification("请求完成", "", `状态码：${response.status}`);
+
+done({});
+```
+
+## 主要能力
+
+| 模块 | 用途 |
+| --- | --- |
+| `$app` / `$argument` | 识别运行平台并标准化模块参数 |
+| `fetch` | 统一宿主提供的 HTTP 请求接口 |
+| `Storage` | 统一持久化存储接口 |
+| `notification` / `done` | 统一通知与脚本结束行为 |
+| `Console` | 提供带日志级别的统一日志接口 |
+| `Lodash` / `qs` | 提供项目常用的对象与查询字符串操作 |
+| `time` / `wait` | 提供时间格式化与异步等待工具 |
+
+:::tip
+Node.js、JavaScriptCore 与 CommonJS 会命中不同的条件导出。请优先从包主入口导入，除非你明确需要某个子路径。
+:::
