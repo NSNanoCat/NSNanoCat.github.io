@@ -3,6 +3,8 @@ title: util
 description: 跨平台脚本接口与 Polyfill 工具库
 ---
 
+import { PackageManagerTabs } from "@rspress/core/theme";
+
 # @nsnanocat/util
 
 `@nsnanocat/util` 用于统一 Quantumult X、Loon、Shadowrocket、Egern、Surge、Stash、Worker 与 Node.js
@@ -15,11 +17,9 @@ description: 跨平台脚本接口与 Polyfill 工具库
 
 ## 安装
 
-从 npm 安装：
+从 npm registry 安装：
 
-```shell
-pnpm add @nsnanocat/util
-```
+<PackageManagerTabs command="add @nsnanocat/util" />
 
 从 GitHub Packages 安装时，先配置作用域和具有 `read:packages` 权限的 Token：
 
@@ -28,11 +28,7 @@ pnpm add @nsnanocat/util
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
 
-然后执行：
-
-```shell
-pnpm add @nsnanocat/util
-```
+配置完成后，仍使用上面的安装命令。
 
 ## 快速开始
 

@@ -3,6 +3,8 @@ title: url
 description: 面向 iOS JavaScriptCore 的 URL 与 URLSearchParams Polyfill
 ---
 
+import { PackageManagerTabs } from "@rspress/core/theme";
+
 # @nsnanocat/url
 
 `@nsnanocat/url` 为至少 iOS 15 JavaScriptCore 提供 `URL` 与 `URLSearchParams` 实现，适用于缺少完整 Web URL
@@ -14,9 +16,9 @@ API 的脚本运行环境。
 
 ## 安装
 
-```shell
-pnpm add @nsnanocat/url
-```
+从 npm registry 安装：
+
+<PackageManagerTabs command="add @nsnanocat/url" />
 
 如果从 GitHub Packages 安装：
 
@@ -24,6 +26,8 @@ pnpm add @nsnanocat/url
 @nsnanocat:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
+
+配置完成后，仍使用上面的安装命令。
 
 ## 快速开始
 

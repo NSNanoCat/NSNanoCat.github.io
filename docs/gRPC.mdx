@@ -3,6 +3,8 @@ title: gRPC
 description: 面向常用 iOS 网络工具的 gRPC 编解码辅助库
 ---
 
+import { PackageManagerTabs } from "@rspress/core/theme";
+
 # @nsnanocat/grpc
 
 `@nsnanocat/grpc` 提供纯 JavaScript gRPC 帧编解码能力，并复用 `@nsnanocat/util` 适配常用 iOS 网络工具。
@@ -14,9 +16,9 @@ description: 面向常用 iOS 网络工具的 gRPC 编解码辅助库
 
 ## 安装
 
-```shell
-pnpm add @nsnanocat/grpc
-```
+从 npm registry 安装：
+
+<PackageManagerTabs command="add @nsnanocat/grpc" />
 
 如果从 GitHub Packages 安装：
 
@@ -24,6 +26,8 @@ pnpm add @nsnanocat/grpc
 @nsnanocat:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 ```
+
+配置完成后，仍使用上面的安装命令。
 
 ## gRPC 帧
 
