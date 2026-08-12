@@ -22,5 +22,10 @@
     "type": "file",
     "name": "gRPC",
     "label": "@nsnanocat/grpc"
+  },
+  {
+    "type": "dir",
+    "name": "api",
+    "label": "API 参考"
   }
 ]

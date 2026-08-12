@@ -4,3 +4,4 @@ doc_build/
 *.log*
 *.tsbuildinfo
 .pnpm-store/
+docs/api/url/**/*.md

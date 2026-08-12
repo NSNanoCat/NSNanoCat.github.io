@@ -3,12 +3,17 @@ import path from "node:path";
 import { defineConfig } from "@rspress/core";
 import { pluginApiDocgen } from "@rspress/plugin-api-docgen";
 import { pluginSitemap } from "@rspress/plugin-sitemap";
+import { pluginTypeDoc } from "@rspress/plugin-typedoc";
 
 const siteUrl = "https://nsnanocat.github.io";
 const utilRoot = process.env.NSNANOCAT_UTIL_ROOT ?? path.resolve(__dirname, "../util");
-const utilEntry = ["index.mjs", "index.js"].map(file => path.join(utilRoot, file)).find(fs.existsSync);
+const utilEntry = ["index.mjs", "index.js"].map((file) => path.join(utilRoot, file)).find(fs.existsSync);
+const urlRoot = process.env.NSNANOCAT_URL_ROOT ?? path.resolve(__dirname, "../URL");
+const urlEntries = ["URL.mts", "URLSearchParams.mts"].map((file) => path.join(urlRoot, file));
 
 if (!utilEntry) throw new Error(`找不到 @nsnanocat/util 入口：${utilRoot}`);
+if (urlEntries.some((entry) => !fs.existsSync(entry)))
+  throw new Error(`找不到 @nsnanocat/url TypeScript 入口：${urlRoot}`);
 
 export default defineConfig({
   root: path.join(__dirname, "docs"),
@@ -38,6 +43,15 @@ export default defineConfig({
     }),
     pluginSitemap({
       siteUrl,
+    }),
+    pluginTypeDoc({
+      entryPoints: urlEntries,
+      outDir: "api/url",
+      setup(app) {
+        const compilerOptions = app.options.getCompilerOptions(app.logger);
+        app.options.setCompilerOptions(urlEntries, { ...compilerOptions, strict: false }, undefined);
+        app.options.setValue("name", "@nsnanocat/url");
+      },
     }),
   ],
 });

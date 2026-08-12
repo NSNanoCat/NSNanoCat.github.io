@@ -29,6 +29,12 @@ jobs:
           repository: NSNanoCat/util
           path: packages/util
           fetch-depth: 1
+      - name: Checkout URL
+        uses: actions/checkout@v4
+        with:
+          repository: NSNanoCat/URL
+          path: packages/url
+          fetch-depth: 1
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
@@ -48,6 +54,7 @@ jobs:
         run: pnpm build
         env:
           NSNANOCAT_UTIL_ROOT: ${{ github.workspace }}/packages/util
+          NSNANOCAT_URL_ROOT: ${{ github.workspace }}/packages/url
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
