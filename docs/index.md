@@ -8,8 +8,8 @@ hero:
   tagline: 面向 JavaScriptCore、Node.js 与常用 iOS 网络工具
   actions:
     - theme: brand
-      text: 查看 util
-      link: /util
+      text: 组件概览
+      link: /overview
     - theme: alt
       text: GitHub Packages
       link: https://github.com/orgs/NSNanoCat/packages

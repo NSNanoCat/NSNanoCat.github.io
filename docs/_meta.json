@@ -1,5 +1,10 @@
 [
   {
+    "type": "file",
+    "name": "overview",
+    "label": "组件概览"
+  },
+  {
     "type": "section-header",
     "label": "组件"
   },
