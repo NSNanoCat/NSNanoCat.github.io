@@ -32,4 +32,10 @@ features:
     details: 在常用 iOS 网络工具中解码和编码 gRPC 帧，并支持二进制 gRPC-Web unary 响应。
     span: 4
     link: /gRPC
+
+  - icon: 🧱
+    title: flatbuffer-root
+    details: 按根表 slot 编解码 FlatBuffers，并透明保留未知与未修改的数据。
+    span: 4
+    link: /flatbuffer-root
 ---

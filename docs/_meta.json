@@ -24,6 +24,11 @@
     "label": "@nsnanocat/grpc"
   },
   {
+    "type": "file",
+    "name": "flatbuffer-root",
+    "label": "@nsnanocat/flatbuffer-root"
+  },
+  {
     "type": "dir",
     "name": "api",
     "label": "API 参考"
