@@ -33,6 +33,12 @@ features:
     span: 4
     link: /gRPC
 
+  - icon: 🧾
+    title: XML
+    details: 在 JavaScriptCore 与 Node.js 中互转 XML、JSON 和 plist，保留属性与文本节点语义。
+    span: 4
+    link: /xml
+
   - icon: 🧱
     title: flatbuffer-root
     details: 按根表 slot 编解码 FlatBuffers，并透明保留未知与未修改的数据。

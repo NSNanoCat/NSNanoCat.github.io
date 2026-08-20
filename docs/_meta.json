@@ -25,6 +25,11 @@
   },
   {
     "type": "file",
+    "name": "xml",
+    "label": "@nsnanocat/xml"
+  },
+  {
+    "type": "file",
     "name": "flatbuffer-root",
     "label": "@nsnanocat/flatbuffer-root"
   },

@@ -1,0 +1,84 @@
+---
+title: xml
+description: XML、JSON 与 plist 转换器，适用于 JavaScriptCore 与 Node.js
+---
+
+import { PackageManagerTabs } from "@rspress/core/theme";
+
+# @nsnanocat/xml
+
+`@nsnanocat/xml` 在 JavaScriptCore 与 Node.js 中互转 XML、JSON 和 plist。XML 属性使用 `@name` 保存，文本节点使用 `#` 保存；`<plist>` 会转换为更适合脚本处理的对象、数组与原生类型。
+
+- [GitHub 仓库](https://github.com/NSNanoCat/XML)
+- [npm](https://www.npmjs.com/package/@nsnanocat/xml)
+- [GitHub Packages](https://github.com/orgs/NSNanoCat/packages/npm/package/xml)
+- [TypeDoc API 参考](/api/xml/)
+
+## 安装
+
+从 npm registry 安装：
+
+<PackageManagerTabs command="add @nsnanocat/xml" />
+
+如果从 GitHub Packages 安装，先配置作用域和具有 `read:packages` 权限的 Token：
+
+```ini title=".npmrc"
+@nsnanocat:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
+```
+
+配置完成后，仍使用上面的安装命令。
+
+## 快速开始
+
+```js
+import XML from "@nsnanocat/xml";
+
+const value = XML.parse('<root enabled="true"><message>Hello</message></root>');
+console.log(value.root["@enabled"]); // "true"
+console.log(value.root.message); // "Hello"
+
+const output = XML.stringify(value, "  ");
+console.log(output);
+```
+
+属性和文本节点使用固定键名，便于在不同脚本宿主中访问：
+
+| XML | JSON |
+| --- | --- |
+| `<item id="1">text</item>` | `{ item: { "@id": "1", "#": "text" } }` |
+| `<item />` | `{ item: undefined }` |
+
+## plist
+
+`<plist>` 会识别常见 plist 节点：`dict`、`array`、`key`、`true`、`false`、`integer`、`real` 和 `string`。
+
+```js
+const plist = XML.parse(`
+  <plist>
+    <dict>
+      <key>name</key><string>NanoCat</string>
+      <key>count</key><integer>2</integer>
+      <key>enabled</key><true/>
+    </dict>
+  </plist>
+`);
+
+console.log(plist.plist.name); // "NanoCat"
+console.log(plist.plist.count); // 2n
+console.log(plist.plist.enabled); // true
+```
+
+## API
+
+### `XML.parse(xml, reviver?)`
+
+将 XML 字符串解析为 JSON-like 对象。传入 `reviver` 时，可以在节点完成解析后按节点名称和值进行转换。
+
+### `XML.stringify(json, tab?)`
+
+将 JSON-like 对象序列化为 XML。`tab` 为空字符串时输出紧凑内容；传入缩进字符串时，会替换默认的制表符缩进。
+
+### `XML.about()`
+
+输出包名称与版本。

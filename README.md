@@ -1,7 +1,7 @@
 # NSNanoCat.github.io
 
-NSNanoCat 的组件文档站，包含 `@nsnanocat/util`、`@nsnanocat/url`、`@nsnanocat/grpc` 与
-`@nsnanocat/flatbuffer-root`。
+NSNanoCat 的组件文档站，包含 `@nsnanocat/util`、`@nsnanocat/url`、`@nsnanocat/grpc`、
+`@nsnanocat/xml` 与 `@nsnanocat/flatbuffer-root`。
 
 ## 开发
 

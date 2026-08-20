@@ -1,0 +1,12 @@
+[
+  {
+    "type": "dir",
+    "label": "Classes",
+    "name": "classes"
+  },
+  {
+    "type": "dir",
+    "label": "Types",
+    "name": "types"
+  }
+]

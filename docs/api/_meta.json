@@ -16,6 +16,11 @@
   },
   {
     "type": "dir",
+    "name": "xml",
+    "label": "@nsnanocat/xml"
+  },
+  {
+    "type": "dir",
     "name": "flatbuffer-root",
     "label": "@nsnanocat/flatbuffer-root"
   }

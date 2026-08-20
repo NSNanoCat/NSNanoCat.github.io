@@ -11,6 +11,8 @@ const urlRoot = process.env.NSNANOCAT_URL_ROOT ?? path.resolve(__dirname, "../UR
 const urlEntries = ["URL.mts", "URLSearchParams.mts"].map((file) => path.join(urlRoot, file));
 const grpcRoot = process.env.NSNANOCAT_GRPC_ROOT ?? path.resolve(__dirname, "../gRPC");
 const grpcEntry = ["index.mjs", "index.js"].map((file) => path.join(grpcRoot, file)).find(fs.existsSync);
+const xmlRoot = process.env.NSNANOCAT_XML_ROOT ?? path.resolve(__dirname, "../XML");
+const xmlEntry = path.join(xmlRoot, "XML.d.mts");
 const flatBufferRootRoot = process.env.NSNANOCAT_FLATBUFFER_ROOT_ROOT ?? path.resolve(__dirname, "../FlatBufferRoot");
 const flatBufferRootEntry = path.join(flatBufferRootRoot, "src/index.d.ts");
 
@@ -18,6 +20,7 @@ if (!utilEntry) throw new Error(`找不到 @nsnanocat/util 入口：${utilRoot}`
 if (urlEntries.some((entry) => !fs.existsSync(entry)))
   throw new Error(`找不到 @nsnanocat/url TypeScript 入口：${urlRoot}`);
 if (!grpcEntry) throw new Error(`找不到 @nsnanocat/grpc 入口：${grpcRoot}`);
+if (!fs.existsSync(xmlEntry)) throw new Error(`找不到 @nsnanocat/xml TypeScript 入口：${xmlRoot}`);
 if (!fs.existsSync(flatBufferRootEntry))
   throw new Error(`找不到 @nsnanocat/flatbuffer-root TypeScript 入口：${flatBufferRootRoot}`);
 
@@ -94,6 +97,18 @@ export default defineConfig({
         },
       }),
       name: "@rspress/plugin-typedoc-grpc",
+    },
+    {
+      ...pluginTypeDoc({
+        entryPoints: [xmlEntry],
+        outDir: "api/xml",
+        setup(app) {
+          const compilerOptions = app.options.getCompilerOptions(app.logger);
+          app.options.setCompilerOptions([xmlEntry], { ...compilerOptions, strict: false }, undefined);
+          app.options.setValue("name", "@nsnanocat/xml");
+        },
+      }),
+      name: "@rspress/plugin-typedoc-xml",
     },
     {
       ...pluginTypeDoc({
