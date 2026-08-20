@@ -7,3 +7,4 @@ doc_build/
 docs/api/url/**/*.md
 docs/api/util/**/*.md
 docs/api/grpc/**/*.md
+docs/api/flatbuffer-root/**/*.md

@@ -13,5 +13,10 @@
     "type": "dir",
     "name": "grpc",
     "label": "@nsnanocat/grpc"
+  },
+  {
+    "type": "dir",
+    "name": "flatbuffer-root",
+    "label": "@nsnanocat/flatbuffer-root"
   }
 ]
